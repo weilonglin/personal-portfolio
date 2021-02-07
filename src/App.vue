@@ -1,13 +1,20 @@
 <template>
   <BackgroundImage />
+  <Spaceship />
+  <Galaxy />
 </template>
 
 <script>
 import BackgroundImage from "./components/Background.vue";
+import Spaceship from "./components/Spaceship.vue";
+import Galaxy from "./components/StarBackground.vue";
+
 export default {
   name: "App",
   components: {
     BackgroundImage,
+    Spaceship,
+    Galaxy,
   },
 };
 </script>
