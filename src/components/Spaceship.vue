@@ -1,7 +1,7 @@
 <template lang="">
   <div
-    id="app"
-    class="absolute bottom-40 w-36 h-72 bg-cover z-20 content-between"
+    id="spaceship"
+    class=" w-36 h-72 bg-cover z-20 "
     :style="{
       'background-image': `url(${require('@/assets/rocket.svg')})`,
     }"
@@ -12,4 +12,11 @@ export default {
   name: "Spaceship",
 };
 </script>
-<style lang=""></style>
+<style>
+#spaceship {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+}
+</style>
