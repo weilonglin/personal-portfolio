@@ -1,11 +1,5 @@
 <template>
-  <div
-    id="stars"
-    class="absolute top-0 left-0 w-full h-full bg-center bg-cover z-0 overflow-hidden"
-    :style="{
-      'background-image': `url(${require('@/assets/Galaxy.jpg')})`,
-    }"
-  ></div>
+  <div id="space-box"></div>
 </template>
 <script>
 export default {
@@ -13,13 +7,30 @@ export default {
 };
 </script>
 <style>
-#stars {
-  animation: scrollDown 500s linear infinite;
+#space-box {
+  background: #071923;
+  border-radius: 6px;
+  box-shadow: 0px 20px 30px rgba(black, 0.2);
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  background-image: url("https://res.cloudinary.com/gelsot/image/upload/v1537745472/space-box/moon.png"),
+    url("../assets/backgroundVector.svg");
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0px 0px, 0px 0px;
+  background-blend-mode: normal, normal, normal, color-dodge;
+  animation: space-jam linear 90s infinite forwards;
 }
 
-@keyframes scrollDown {
-  100% {
-    background-position: 0px 500vh, 0px 400vh, 0px 300vh, 0px 200vh, 0px 100vh;
+@keyframes space-jam {
+  from {
+    background-position: -500px 0px, 0px 0px;
+  }
+  to {
+    background-position: 2000px 370px, 0px 0px;
   }
 }
 </style>
