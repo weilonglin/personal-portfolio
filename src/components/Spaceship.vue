@@ -1,9 +1,9 @@
 <template lang="">
   <div
     id="app"
-    class="absolute bottom-0 w-72 h-72 bg-cover z-20 "
+    class="absolute bottom-40 w-36 h-72 bg-cover z-20 content-between"
     :style="{
-      'background-image': `url(${require('@/assets/spaceship-placeholder.jpg')})`,
+      'background-image': `url(${require('@/assets/rocket.svg')})`,
     }"
   ></div>
 </template>

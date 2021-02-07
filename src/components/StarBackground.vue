@@ -1,16 +1,11 @@
 <template lang="">
   <div
-    class="absolute pt-16 pb-32 flex content-center items-center justify-center z-0"
-    style="min-height: 100vh;"
-  >
-    <div
-      id="app"
-      class="absolute top-0 w-full h-full bg-center bg-cover bg"
-      :style="{
-        'background-image': `url(${require('@/assets/Galaxy.jpg')})`,
-      }"
-    ></div>
-  </div>
+    id="app"
+    class="absolute top-0 left-0 w-full h-full bg-center bg-cover z-0"
+    :style="{
+      'background-image': `url(${require('@/assets/Galaxy.jpg')})`,
+    }"
+  ></div>
 </template>
 <script>
 export default {
