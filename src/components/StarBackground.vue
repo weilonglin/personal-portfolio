@@ -1,6 +1,8 @@
 <template>
   <div class="w-full h-full">
-    <div id="dustStorm"></div>
+    <div id="dustStormOne"></div>
+    <div id="dustStormTwo"></div>
+    <div id="dustStormThree"></div>
     <div id="sprites"></div>
     <div id="spritesTwo"></div>
     <div id="bigClouds"></div>
@@ -8,24 +10,93 @@
   </div>
 </template>
 <script>
+import { gsap } from "gsap";
 export default {
   name: "Galaxy",
+  methods: {
+    simpleFade() {
+      gsap.fromTo(
+        "#dustStormOne",
+        { backgroundPosition: "-1500px 0px" },
+        {
+          backgroundPosition: "500px 200px",
+          opacity: 0,
+          duration: 2,
+          delay: 0,
+          repeat: -1,
+        }
+      );
+    },
+    simpleFade2() {
+      gsap.fromTo(
+        "#dustStormTwo",
+        { backgroundPosition: "-1500px 0px" },
+        {
+          backgroundPosition: "500px 400px",
+          opacity: 0,
+          duration: 4,
+          delay: 0,
+          repeat: -1,
+        }
+      );
+    },
+    simpleFade3() {
+      gsap.fromTo(
+        "#dustStormThree",
+        { backgroundPosition: "-1500px 0px" },
+        {
+          backgroundPosition: "500px -300px",
+          opacity: 0,
+          duration: 6,
+          delay: 0,
+          repeat: -1,
+        }
+      );
+    },
+  },
+  mounted() {
+    this.simpleFade();
+    this.simpleFade2();
+    this.simpleFade3();
+  },
 };
 </script>
 <style>
-#dustStorm {
+#dustStormOne {
   width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
   opacity: 0.5;
-  background-image: url("../assets/dust1.png"), url("../assets/dust3.png"),
-    url("../assets/dust4.png");
-  background-size: cover, cover, cover;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 0px 0px, 0px 0px, 0px 0px;
-  background-blend-mode: normal, normal, normal;
-  animation: dustStorm 20s linear 0.1s infinite forwards;
+  background-image: url("../assets/dust1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
+}
+#dustStormTwo {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  background-image: url("../assets/dust3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
+}
+#dustStormThree {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  background-image: url("../assets/dust4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
 }
 
 #space-box {
@@ -51,7 +122,6 @@ export default {
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-blend-mode: normal;
-  animation: bigClouds 20s linear 0.1s infinite forwards;
 }
 
 #sprites {
