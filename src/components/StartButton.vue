@@ -25,5 +25,7 @@ export default {
 <style>
 #startButton {
   transform: translateX(-50%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 </style>
