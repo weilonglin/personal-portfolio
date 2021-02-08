@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full">
+  <div>
     <BackgroundImage />
     <Spaceship />
     <Galaxy />
@@ -14,7 +14,6 @@ import Galaxy from "../components/StarBackground.vue";
 import StartButton from "../components/StartButton";
 
 export default {
-  name: "Canvas",
   components: {
     BackgroundImage,
     Spaceship,

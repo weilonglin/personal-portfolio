@@ -1,15 +1,13 @@
 <template>
-  <Canvas />
+  <router-view to="Canvas" />
+  <router-view to="StageOne" />
+  <router-view to="StageTwo" />
+  <router-view to="StageThree" />
 </template>
 
 <script>
-import Canvas from "./views/Canvas.vue";
-
 export default {
   name: "App",
-  components: {
-    Canvas,
-  },
 };
 </script>
 
@@ -20,5 +18,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100vh;
+  overflow: hidden;
 }
 </style>
