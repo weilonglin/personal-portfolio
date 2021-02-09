@@ -118,7 +118,7 @@ export default {
         "#planet",
         { transform: "translateY(0px) translateX(-500px)" },
         {
-          transform: "translateY(800px) translateX(1500px)",
+          transform: "translateY(800px) translateX(2500px)",
           opacity: 1,
           duration: 40,
           repeat: -1,
