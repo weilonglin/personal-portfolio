@@ -1,12 +1,16 @@
 <template>
   <div class="w-full h-full">
+    <div id="space-boxTwo"></div>
+    <div id="planet"></div>
+    <div id="space-boxOne"></div>
+    <div id="bigClouds"></div>
     <div id="dustStormOne"></div>
     <div id="dustStormTwo"></div>
     <div id="dustStormThree"></div>
+    <div id="dustBigOne"></div>
+    <div id="dustBigTwo"></div>
     <div id="sprites"></div>
     <div id="spritesTwo"></div>
-    <div id="bigClouds"></div>
-    <div id="space-box"></div>
   </div>
 </template>
 <script>
@@ -17,11 +21,11 @@ export default {
     simpleFade() {
       gsap.fromTo(
         "#dustStormOne",
-        { backgroundPosition: "-1500px 0px" },
+        { transform: "translateX(-1500px)" },
         {
-          backgroundPosition: "500px 200px",
-          opacity: 0,
-          duration: 2,
+          transform: "translateX(1500px)",
+          opacity: 1,
+          duration: 10,
           delay: 0,
           repeat: -1,
         }
@@ -30,12 +34,12 @@ export default {
     simpleFade2() {
       gsap.fromTo(
         "#dustStormTwo",
-        { backgroundPosition: "-1500px 0px" },
+        { transform: "translateX(-1500px)" },
         {
-          backgroundPosition: "500px 400px",
-          opacity: 0,
-          duration: 4,
-          delay: 0,
+          transform: "translateX(2000px)",
+          opacity: 1,
+          duration: 10,
+          delay: 6,
           repeat: -1,
         }
       );
@@ -43,13 +47,107 @@ export default {
     simpleFade3() {
       gsap.fromTo(
         "#dustStormThree",
-        { backgroundPosition: "-1500px 0px" },
+        { transform: "translateX(-1500px)" },
         {
-          backgroundPosition: "500px -300px",
-          opacity: 0,
-          duration: 6,
+          transform: "translateX(1500px)",
+          opacity: 1,
+          duration: 10,
+          delay: 3,
+          repeat: -1,
+        }
+      );
+    },
+    dustBigOne() {
+      gsap.fromTo(
+        "#dustBigOne",
+        { transform: "translateX(0px)" },
+        {
+          transform: "translateX(2px) translateY(-3px)",
+          opacity: 0.9,
+          duration: 3,
           delay: 0,
           repeat: -1,
+          yoyo: true,
+        }
+      );
+    },
+    dustBigTwo() {
+      gsap.fromTo(
+        "#dustBigTwo",
+        { transform: "translateX(0px)" },
+        {
+          transform: "translateX(3px) translateY(2px)",
+          opacity: 0.7,
+          duration: 2,
+          delay: 0,
+          repeat: -1,
+          yoyo: true,
+        }
+      );
+    },
+    wellSpritesOne() {
+      gsap.fromTo(
+        "#sprites",
+        { transform: "translateY(0px)", opacity: 1 },
+        {
+          transform: "translateY(3px)",
+          opacity: 0.1,
+          duration: 2,
+          delay: 0,
+          repeat: -1,
+          yoyo: true,
+        }
+      );
+    },
+    wellSpritesTwo() {
+      gsap.fromTo(
+        "#spritesTwo",
+        { transform: "translateY(0px)" },
+        {
+          transform: "translateY(3px)",
+          opacity: 0.2,
+          duration: 2,
+          delay: 2,
+          repeat: -1,
+          yoyo: true,
+        }
+      );
+    },
+    planetBig() {
+      gsap.fromTo(
+        "#planet",
+        { transform: "translateY(0px) translateX(-500px)" },
+        {
+          transform: "translateY(800px) translateX(1500px)",
+          opacity: 1,
+          duration: 40,
+          repeat: -1,
+        }
+      );
+    },
+    cloudBig() {
+      gsap.fromTo(
+        "#bigClouds",
+        { transform: "translateY(0px) translateX(0px)" },
+        {
+          transform: "translateY(0px) translateX(90px)",
+          opacity: 1,
+          duration: 10,
+          repeat: -1,
+          yoyo: true,
+        }
+      );
+    },
+    hueShift() {
+      gsap.fromTo(
+        "#space-boxTwo",
+        { transform: "translateY(0px)" },
+        {
+          transform: "translateY(-200px)",
+          opacity: 1,
+          duration: 20,
+          repeat: -1,
+          yoyo: true,
         }
       );
     },
@@ -58,6 +156,13 @@ export default {
     this.simpleFade();
     this.simpleFade2();
     this.simpleFade3();
+    this.dustBigOne();
+    this.dustBigTwo();
+    this.wellSpritesOne();
+    this.wellSpritesTwo();
+    this.planetBig();
+    this.cloudBig();
+    this.hueShift();
   },
 };
 </script>
@@ -99,17 +204,63 @@ export default {
   background-blend-mode: normal;
 }
 
-#space-box {
+#dustBigOne {
   width: 100vw;
   height: 100vh;
-  position: relative;
-  background-image: url("../assets/backgroundNew.png"),
-    url("../assets/planet.svg"), url("../assets/backgroundHue.svg");
-  background-size: cover, 200px, cover;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 0px 0px, 0px 0px, 0px 0px;
-  background-blend-mode: normal, normal, color-dodge;
-  animation: space-jam linear 90s infinite forwards;
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  background-image: url("../assets/dust.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
+}
+#dustBigTwo {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  background-image: url("../assets/dust2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
+}
+
+#space-boxOne {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-image: url("../assets/backgroundNew.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
+}
+#space-boxTwo {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-image: url("../assets/backgroundHue.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: color-dodge;
+}
+#planet {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-image: url("../assets/planet.svg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-blend-mode: normal;
 }
 
 #bigClouds {
@@ -134,7 +285,6 @@ export default {
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-blend-mode: normal;
-  animation: fadeIn 10s linear 0.1s infinite forwards;
 }
 
 #spritesTwo {
@@ -147,165 +297,5 @@ export default {
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-blend-mode: normal;
-  animation: fadeInTwo 10s linear 0.1s infinite forwards;
-}
-
-@keyframes dustStorm {
-  0% {
-    background-position: 0px 2px, 0px 30px, 0px 2px;
-  }
-  10% {
-    background-position: 6px 4px, 0px 24px, -6px 4px;
-  }
-  20% {
-    background-position: 12px 6px, 0px 18px, -12px 6px;
-  }
-  30% {
-    background-position: 18px 8px, 0px 12px, -18px 8px;
-  }
-  40% {
-    background-position: 24px 10px, 0px 6px, -24px 10px;
-  }
-  50% {
-    background-position: 30px 12px, 0px 0px, -30px 12px;
-  }
-  60% {
-    background-position: 24px 10px, 0px 6px, -24px 10px;
-  }
-  70% {
-    background-position: 18px 8px, 0px 12px, -18px 8px;
-  }
-  80% {
-    background-position: 12px 6px, 0px 18px, -12px 6px;
-  }
-  90% {
-    background-position: 6px 4px, 0px 24px, -6px 4px;
-  }
-  100% {
-    background-position: 0px 2px, 0px 30px, -0px 2px;
-  }
-}
-
-@keyframes space-jam {
-  from {
-    background-position: 0px 0px, -500px 0px, 0px 0px;
-  }
-  to {
-    background-position: 0px 0px, 2000px 370px, 0px 0px;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0.1;
-    background-position: 0px 4px;
-  }
-  10% {
-    opacity: 0.2;
-    background-position: 0px 3px;
-  }
-  20% {
-    opacity: 0.5;
-    background-position: 0px 2px;
-  }
-  30% {
-    opacity: 0.7;
-    background-position: 0px 1px;
-  }
-  40% {
-    opacity: 0.9;
-    background-position: 0px 0px;
-  }
-  50% {
-    opacity: 0.7;
-    background-position: 0px -1px;
-  }
-  60% {
-    opacity: 0.5;
-    background-position: 0px -2px;
-  }
-  80% {
-    opacity: 0.2;
-    background-position: 0px -3px;
-  }
-  100% {
-    opacity: 0;
-    background-position: 0px -4px;
-  }
-}
-
-@keyframes fadeInTwo {
-  0% {
-    opacity: 0.1;
-    background-position: 0px 8px;
-  }
-  10% {
-    opacity: 0.2;
-    background-position: 0px 5px;
-  }
-  20% {
-    opacity: 0.5;
-    background-position: 0px 2px;
-  }
-  30% {
-    opacity: 0.7;
-    background-position: 0px -1px;
-  }
-  40% {
-    opacity: 0.9;
-    background-position: 0px -4px;
-  }
-  50% {
-    opacity: 0.7;
-    background-position: 0px -7px;
-  }
-  60% {
-    opacity: 0.5;
-    background-position: 0px -10px;
-  }
-  80% {
-    opacity: 0.2;
-    background-position: 0px -13px;
-  }
-  100% {
-    opacity: 0;
-    background-position: 0px -15px;
-  }
-}
-
-@keyframes bigClouds {
-  0% {
-    background-position: 0px 0px;
-  }
-  10% {
-    background-position: 6px 0px;
-  }
-  20% {
-    background-position: 12px 0px;
-  }
-  30% {
-    background-position: 18px 0px;
-  }
-  40% {
-    background-position: 24px 0px;
-  }
-  50% {
-    background-position: 30px 0px;
-  }
-  60% {
-    background-position: 24px 0px;
-  }
-  70% {
-    background-position: 18px 0px;
-  }
-  80% {
-    background-position: 12px 0px;
-  }
-  90% {
-    background-position: 6px 0px;
-  }
-  100% {
-    background-position: 0px 0px;
-  }
 }
 </style>
