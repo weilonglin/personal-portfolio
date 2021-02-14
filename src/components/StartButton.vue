@@ -15,6 +15,42 @@
     >
       Start Journey
     </button>
+
+    <!-- <div class="bg-white rounded-lg">
+      <div class="w-full border-t-8 border-red-600 rounded-lg flex">
+        <div class="pt-6 flex justify-center"></div>
+        <div class="w-full pt-9 pr-4">
+          <h3 class="font-bold text-pink-700">Welcome soldier!</h3>
+          <p class="py-4 text-sm text-gray-400">
+            Firstly, how may I call you?
+          </p>
+          <div class="w-full pt-9 pr-4">
+            <select
+              class="p-4 text-gray-500 rounded-xl resize-none border-2 border-red-500"
+            >
+              <option class="py-1">Sir</option>
+              <option class="py-1">Miss</option>
+              <option class="py-1">Rather not tell</option>
+              <option class="py-1">Pizza</option>
+            </select>
+            <textarea
+              rows="1"
+              class="p-4 text-gray-500 rounded-xl resize-none border-2 border-red-500"
+            >
+Enter your name</textarea
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 flex space-x-4">
+        <a
+          href="#"
+          class="w-full px-4 py-3 text-center text-red-100 bg-red-600 rounded-lg hover:bg-pink-700 hover:text-white font-bold text-sm"
+          >Confirm</a
+        >
+      </div>
+    </div> -->
   </div>
 </template>
 <script>
